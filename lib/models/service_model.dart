@@ -10,22 +10,22 @@ class ServiceModel {
     required this.image,
     required this.color,
   });
-
-  List<ServiceModel> services = [
-    ServiceModel(
-        id: 1,
-        title: "Android Developement using Flutter",
-        image: "",
-        color: Colors.green),
-    ServiceModel(
-        id: 2,
-        title: "IOS Developement using Flutter",
-        image: "",
-        color: Colors.white),
-    ServiceModel(
-        id: 1,
-        title: "Web Developement using Flutter",
-        image: "",
-        color: Colors.blue),
-  ];
 }
+
+List<ServiceModel> services = [
+  ServiceModel(
+      id: 1,
+      title: "Android Developement using Flutter",
+      image: "images/android.png",
+      color: const Color.fromRGBO(72, 232, 109, 1)),
+  ServiceModel(
+      id: 2,
+      title: "IOS Developement using Flutter",
+      image: "images/ios.jpeg",
+      color: const Color.fromRGBO(208, 245, 244, 1)),
+  ServiceModel(
+      id: 1,
+      title: "Web Developement using Flutter",
+      image: "images/web.png",
+      color: const Color.fromARGB(255, 90, 178, 249)),
+];

@@ -53,7 +53,9 @@ class _NavBarState extends State<NavBar> {
       child: Row(
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              // Navigator.of(context).pushNamed();
+            },
             child: MouseRegion(
               onEnter: (event) => onEntered(true),
               onExit: (event) => onEntered(false),

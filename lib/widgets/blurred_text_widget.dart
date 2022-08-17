@@ -21,7 +21,7 @@ class BlurredTextWidget extends StatelessWidget {
                   minWidth: 30.w,
                   maxWidth: 80.w,
                   minHeight: 30.h,
-                  maxHeight: 60.h),
+                  maxHeight: 65.h),
               color: Colors.white.withOpacity(0.02),
               child: Padding(
                 padding: EdgeInsets.all(8.h),
