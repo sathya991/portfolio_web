@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants.dart';
+import 'package:portfolio/parts/second_part.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:sizer/sizer.dart';
 
 class NavBar extends StatefulWidget {
-  const NavBar({Key? key}) : super(key: key);
-
+  const NavBar({Key? key, required this.itemScrollController})
+      : super(key: key);
+  final ItemScrollController itemScrollController;
   @override
   State<NavBar> createState() => _NavBarState();
 }
@@ -54,7 +57,8 @@ class _NavBarState extends State<NavBar> {
         children: [
           GestureDetector(
             onTap: () {
-              // Navigator.of(context).pushNamed();
+              widget.itemScrollController.scrollTo(
+                  index: 1, duration: const Duration(milliseconds: 300));
             },
             child: MouseRegion(
               onEnter: (event) => onEntered(true),
@@ -71,7 +75,10 @@ class _NavBarState extends State<NavBar> {
             width: 2.w,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              widget.itemScrollController.scrollTo(
+                  index: 1, duration: const Duration(milliseconds: 300));
+            },
             child: MouseRegion(
               onEnter: (event) => onEntered1(true),
               onExit: (event) => onEntered1(false),
@@ -87,7 +94,10 @@ class _NavBarState extends State<NavBar> {
             width: 2.w,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              widget.itemScrollController.scrollTo(
+                  index: 2, duration: const Duration(milliseconds: 300));
+            },
             child: MouseRegion(
               onEnter: (event) => onEntered2(true),
               onExit: (event) => onEntered2(false),

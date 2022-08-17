@@ -48,7 +48,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
           ),
           Row(children: servicesList),
           SizedBox(
-            height: 5.h,
+            height: 6.h,
           ),
         ]),
         Column(
@@ -56,6 +56,9 @@ class _ServicesWidgetState extends State<ServicesWidget> {
             Text(
               "In need of these skills?",
               style: GoogleFonts.lato(fontSize: 16.sp),
+            ),
+            SizedBox(
+              height: 6.h,
             ),
             ElevatedButton(
               onPressed: () {},

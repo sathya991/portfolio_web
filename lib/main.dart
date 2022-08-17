@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/home_screen.dart';
+import 'package:portfolio/parts/second_part.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -14,6 +15,9 @@ class MyApp extends StatelessWidget {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
+        // routes: {
+        //   // SecondPart.secondPartRoute: (context) => const SecondPart(),
+        // },
         title: 'Portfolio',
         theme: ThemeData(
           primarySwatch: Colors.blue,

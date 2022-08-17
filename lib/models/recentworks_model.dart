@@ -17,5 +17,7 @@ List<RecentWorksModel> recentWorks = [
       id: 2,
       image: "",
       category: "Android & IOS Application",
-      title: "MoonLit Store")
+      title: "MoonLit Store"),
+  RecentWorksModel(
+      id: 3, image: "", category: "Web Application", title: "Portfolio Website")
 ];
