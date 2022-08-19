@@ -3,11 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/models/service_model.dart';
 import 'package:portfolio/widgets/service_image.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:sizer/sizer.dart';
 
 class ServicesWidget extends StatefulWidget {
-  const ServicesWidget({Key? key}) : super(key: key);
-
+  const ServicesWidget({Key? key, required this.itemScrollController})
+      : super(key: key);
+  final ItemScrollController itemScrollController;
   @override
   State<ServicesWidget> createState() => _ServicesWidgetState();
 }
@@ -55,13 +57,16 @@ class _ServicesWidgetState extends State<ServicesWidget> {
           children: [
             Text(
               "In need of these skills?",
-              style: GoogleFonts.lato(fontSize: 16.sp),
+              style: Constants().headingTextStyle,
             ),
             SizedBox(
-              height: 6.h,
+              height: 2.h,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                widget.itemScrollController.scrollTo(
+                    index: 3, duration: const Duration(milliseconds: 300));
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

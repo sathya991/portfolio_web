@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/parts/contact_part.dart';
 import 'package:portfolio/parts/intro_part.dart';
 import 'package:portfolio/parts/my_works_part.dart';
 import 'package:portfolio/parts/second_part.dart';
@@ -19,13 +20,16 @@ class _HomeScreenState extends State<HomeScreen> {
       IntroPart(
         itemScrollController: itemScrollController,
       ),
-      const SecondPart(),
+      SecondPart(
+        itemScrollController: itemScrollController,
+      ),
       const MyWorksPart(),
+      const ContactPart(),
     ];
     return Scaffold(
       body: ScrollablePositionedList.builder(
           itemScrollController: itemScrollController,
-          itemCount: 3,
+          itemCount: 4,
           itemBuilder: (context, index) {
             return allWidgets[index];
           }),

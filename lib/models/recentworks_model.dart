@@ -12,12 +12,18 @@ class RecentWorksModel {
 
 List<RecentWorksModel> recentWorks = [
   RecentWorksModel(
-      id: 1, image: "", category: "Android & IOS Application", title: "Todo"),
+      id: 1,
+      image: "images/1024.png",
+      category: "Android & IOS Application",
+      title: "Todo"),
   RecentWorksModel(
       id: 2,
-      image: "",
+      image: "images/1024.png",
       category: "Android & IOS Application",
       title: "MoonLit Store"),
   RecentWorksModel(
-      id: 3, image: "", category: "Web Application", title: "Portfolio Website")
+      id: 3,
+      image: "images/1024.png",
+      category: "Web Application",
+      title: "Portfolio Website")
 ];

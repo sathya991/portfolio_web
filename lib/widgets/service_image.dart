@@ -15,7 +15,8 @@ class ServiceImage extends StatelessWidget {
         height: 18.h,
         width: 15.w,
         decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.circular(0.5.h)),
+            color: color.withOpacity(0.8),
+            borderRadius: BorderRadius.circular(0.5.h)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

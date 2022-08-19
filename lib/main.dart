@@ -15,14 +15,13 @@ class MyApp extends StatelessWidget {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        // routes: {
-        //   // SecondPart.secondPartRoute: (context) => const SecondPart(),
-        // },
         title: 'Portfolio',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const HomeScreen(),
+        home: Container(
+            constraints: BoxConstraints(maxHeight: 1000, maxWidth: 1000),
+            child: const HomeScreen()),
       );
     });
   }

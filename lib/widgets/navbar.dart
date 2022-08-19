@@ -129,7 +129,10 @@ class _NavBarState extends State<NavBar> {
             width: 2.w,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              widget.itemScrollController.scrollTo(
+                  index: 3, duration: const Duration(milliseconds: 300));
+            },
             child: MouseRegion(
               onEnter: (event) => onEntered4(true),
               onExit: (event) => onEntered4(false),

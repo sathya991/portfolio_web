@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants.dart';
 import 'package:portfolio/widgets/about_me.dart';
 import 'package:portfolio/widgets/services_offered.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:sizer/sizer.dart';
 
 class SecondPart extends StatelessWidget {
-  const SecondPart({Key? key}) : super(key: key);
+  const SecondPart({Key? key, required this.itemScrollController})
+      : super(key: key);
+  final ItemScrollController itemScrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +17,14 @@ class SecondPart extends StatelessWidget {
       height: 100.h,
       width: 100.w,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(10.w, 5.h, 10.w, 0),
+        padding: Constants().constPaddingSize,
         child: Column(
-          children: [AboutMeWidget(), ServicesWidget()],
+          children: [
+            AboutMeWidget(),
+            ServicesWidget(
+              itemScrollController: itemScrollController,
+            )
+          ],
         ),
       ),
     );
