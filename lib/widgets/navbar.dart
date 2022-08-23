@@ -112,22 +112,22 @@ class _NavBarState extends State<NavBar> {
           SizedBox(
             width: 2.w,
           ),
-          GestureDetector(
-            onTap: () {},
-            child: MouseRegion(
-              onEnter: (event) => onEntered3(true),
-              onExit: (event) => onEntered3(false),
-              child: Text(
-                "Feedback",
-                style: isHover4
-                    ? Constants().hoverTextStyle()
-                    : Constants().navBarTextStyle(),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 2.w,
-          ),
+          // GestureDetector(
+          //   onTap: () {},
+          //   child: MouseRegion(
+          //     onEnter: (event) => onEntered3(true),
+          //     onExit: (event) => onEntered3(false),
+          //     child: Text(
+          //       "Feedback",
+          //       style: isHover4
+          //           ? Constants().hoverTextStyle()
+          //           : Constants().navBarTextStyle(),
+          //     ),
+          //   ),
+          // ),
+          // SizedBox(
+          //   width: 2.w,
+          // ),
           GestureDetector(
             onTap: () {
               widget.itemScrollController.scrollTo(
