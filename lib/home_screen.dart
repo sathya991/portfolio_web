@@ -3,6 +3,9 @@ import 'package:portfolio/parts/contact_part.dart';
 import 'package:portfolio/parts/intro_part.dart';
 import 'package:portfolio/parts/my_works_part.dart';
 import 'package:portfolio/parts/second_part.dart';
+import 'package:portfolio/responsive/desktop_layout.dart';
+import 'package:portfolio/responsive/mobile_layout.dart';
+import 'package:portfolio/responsive/responsive_layout.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,26 +16,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final itemScrollController = ItemScrollController();
   @override
   Widget build(BuildContext context) {
-    List allWidgets = [
-      IntroPart(
-        itemScrollController: itemScrollController,
-      ),
-      SecondPart(
-        itemScrollController: itemScrollController,
-      ),
-      const MyWorksPart(),
-      const ContactPart(),
-    ];
-    return Scaffold(
-      body: ScrollablePositionedList.builder(
-          itemScrollController: itemScrollController,
-          itemCount: 4,
-          itemBuilder: (context, index) {
-            return allWidgets[index];
-          }),
+    return const Scaffold(
+      body: ResponsiveLayout(
+          mobileBody: MobileLayout(), desktopBody: DesktopLayout()),
     );
   }
 }

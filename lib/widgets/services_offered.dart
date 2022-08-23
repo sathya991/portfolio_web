@@ -8,9 +8,11 @@ import 'package:sizer/sizer.dart';
 import 'package:url_launcher/link.dart';
 
 class ServicesWidget extends StatefulWidget {
-  const ServicesWidget({Key? key, required this.itemScrollController})
+  const ServicesWidget(
+      {Key? key, required this.itemScrollController, this.isMobile})
       : super(key: key);
   final ItemScrollController itemScrollController;
+  final isMobile;
   @override
   State<ServicesWidget> createState() => _ServicesWidgetState();
 }
@@ -20,7 +22,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
   @override
   void initState() {
     // TODO: implement initState
-    addServices();
+    widget.isMobile ? addMobileServices() : addServices();
     super.initState();
   }
 
@@ -37,6 +39,19 @@ class _ServicesWidgetState extends State<ServicesWidget> {
     }
   }
 
+  addMobileServices() {
+    for (int i = 0; i < services.length; i++) {
+      servicesList.add(ServiceImageMobile(
+        color: services[i].color,
+        imageAsset: services[i].image,
+        text: services[i].title,
+      ));
+      servicesList.add(SizedBox(
+        height: 1.h,
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -44,12 +59,18 @@ class _ServicesWidgetState extends State<ServicesWidget> {
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
             "My Skills",
-            style: Constants().headingTextStyle,
+            style: widget.isMobile
+                ? Constants().mobileHeadingTextStyle
+                : Constants().headingTextStyle,
           ),
           SizedBox(
             height: 2.h,
           ),
-          Row(children: servicesList),
+          widget.isMobile
+              ? Column(
+                  children: servicesList,
+                )
+              : Row(children: servicesList),
           SizedBox(
             height: 6.h,
           ),
@@ -58,38 +79,73 @@ class _ServicesWidgetState extends State<ServicesWidget> {
           children: [
             Text(
               "In need of these skills?",
-              style: Constants().headingTextStyle,
+              style: widget.isMobile
+                  ? Constants().mobileHeadingTextStyle
+                  : Constants().headingTextStyle,
             ),
             SizedBox(
               height: 2.h,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ImageButton(
-                  widget: widget,
-                  onClick: () => widget.itemScrollController.scrollTo(
-                      index: 3, duration: const Duration(milliseconds: 300)),
-                  imageAsset: 'images/handshake.png',
-                  text: "Hire me",
-                ),
-                SizedBox(
-                  width: 2.w,
-                ),
-                Link(
-                    target: LinkTarget.blank,
-                    uri: Uri.parse(
-                        "https://drive.google.com/uc?export=download&id=1-NAhtkl2bzk1JG1xoKFUmrlIbm4XzRq_"),
-                    builder: (context, followLink) {
-                      return ImageButton(
+            widget.isMobile
+                ? Column(
+                    children: [
+                      ImageButton(
                         widget: widget,
-                        onClick: followLink,
-                        imageAsset: 'images/cloud.png',
-                        text: "Download CV",
-                      );
-                    }),
-              ],
-            ),
+                        onClick: () => widget.itemScrollController.scrollTo(
+                            index: 3,
+                            duration: const Duration(milliseconds: 300)),
+                        imageAsset: 'images/handshake.png',
+                        text: "Hire me",
+                        isMobile: widget.isMobile,
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(
+                              "https://drive.google.com/uc?export=download&id=1-NAhtkl2bzk1JG1xoKFUmrlIbm4XzRq_"),
+                          builder: (context, followLink) {
+                            return ImageButton(
+                              widget: widget,
+                              onClick: followLink,
+                              imageAsset: 'images/cloud.png',
+                              text: "Download CV",
+                              isMobile: widget.isMobile,
+                            );
+                          }),
+                    ],
+                  )
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ImageButton(
+                        widget: widget,
+                        onClick: () => widget.itemScrollController.scrollTo(
+                            index: 3,
+                            duration: const Duration(milliseconds: 300)),
+                        imageAsset: 'images/handshake.png',
+                        text: "Hire me",
+                        isMobile: widget.isMobile,
+                      ),
+                      SizedBox(
+                        width: 2.w,
+                      ),
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(
+                              "https://drive.google.com/uc?export=download&id=1-NAhtkl2bzk1JG1xoKFUmrlIbm4XzRq_"),
+                          builder: (context, followLink) {
+                            return ImageButton(
+                              widget: widget,
+                              onClick: followLink,
+                              imageAsset: 'images/cloud.png',
+                              text: "Download CV",
+                              isMobile: widget.isMobile,
+                            );
+                          }),
+                    ],
+                  ),
           ],
         )
       ],
@@ -104,10 +160,12 @@ class ImageButton extends StatelessWidget {
     this.imageAsset,
     this.text,
     this.onClick,
+    this.isMobile,
   }) : super(key: key);
   final imageAsset;
   final text;
   final onClick;
+  final isMobile;
 
   final ServicesWidget widget;
 
@@ -120,15 +178,21 @@ class ImageButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            imageAsset,
-            height: 5.h,
-            width: 5.w,
-          ),
+          isMobile
+              ? Image.asset(
+                  imageAsset,
+                  height: 8.h,
+                  width: 8.w,
+                )
+              : Image.asset(
+                  imageAsset,
+                  height: 5.h,
+                  width: 5.w,
+                ),
           Text(
             text,
             style: GoogleFonts.lato(
-                fontSize: 5.sp,
+                fontSize: isMobile ? 12.sp : 5.sp,
                 color: Colors.black,
                 fontWeight: FontWeight.bold),
           )
@@ -136,8 +200,8 @@ class ImageButton extends StatelessWidget {
       ),
       style: ElevatedButton.styleFrom(
           primary: const Color.fromRGBO(233, 240, 248, 1),
-          minimumSize: Size(15.w, 5.h),
-          maximumSize: Size(20.w, 5.h),
+          minimumSize: isMobile ? Size(40.w, 4.h) : Size(15.w, 5.h),
+          maximumSize: isMobile ? Size(45.w, 4.h) : Size(20.w, 5.h),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25))),
     );

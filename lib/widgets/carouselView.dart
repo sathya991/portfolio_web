@@ -13,10 +13,33 @@ class MyCarouselView extends StatelessWidget {
         itemBuilder: (context, index, i) {
           return MyWorksCard(
             recentWork: recentWorks[index],
+            isMobile: false,
             index: index,
           );
         },
         options: CarouselOptions(
+            autoPlay: true,
+            enlargeCenterPage: true,
+            autoPlayInterval: const Duration(seconds: 5)));
+  }
+}
+
+class MobileCarouselView extends StatelessWidget {
+  const MobileCarouselView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider.builder(
+        itemCount: recentWorks.length,
+        itemBuilder: (context, index, i) {
+          return MyWorksCard(
+            recentWork: recentWorks[index],
+            isMobile: true,
+            index: index,
+          );
+        },
+        options: CarouselOptions(
+            scrollDirection: Axis.vertical,
             autoPlay: true,
             enlargeCenterPage: true,
             autoPlayInterval: const Duration(seconds: 5)));

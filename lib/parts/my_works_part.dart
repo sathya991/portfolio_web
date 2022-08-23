@@ -6,8 +6,8 @@ import 'package:portfolio/widgets/carouselView.dart';
 import 'package:sizer/sizer.dart';
 
 class MyWorksPart extends StatelessWidget {
-  const MyWorksPart({Key? key}) : super(key: key);
-
+  const MyWorksPart({Key? key, this.isMobile}) : super(key: key);
+  final isMobile;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,18 +29,27 @@ class MyWorksPart extends StatelessWidget {
               children: [
                 Text(
                   "My works",
-                  style: Constants().headingTextStyle,
+                  style: isMobile
+                      ? Constants().mobileHeadingTextStyle
+                      : Constants().headingTextStyle,
                 ),
                 Text(
                   "My aresenal of works to show off",
-                  style: Constants().captionsTextStyle,
+                  style: isMobile
+                      ? Constants().mobileCaptionsTextStyle
+                      : Constants().captionsTextStyle,
                 )
               ],
             ),
             SizedBox(
               height: 5.h,
             ),
-            SizedBox(height: 60.h, width: 80.w, child: const MyCarouselView()),
+            SizedBox(
+                height: 60.h,
+                width: 80.w,
+                child: isMobile
+                    ? const MobileCarouselView()
+                    : const MyCarouselView()),
           ],
         ),
       ),

@@ -6,9 +6,11 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:sizer/sizer.dart';
 
 class SecondPart extends StatelessWidget {
-  const SecondPart({Key? key, required this.itemScrollController})
+  const SecondPart(
+      {Key? key, required this.itemScrollController, this.isMobile})
       : super(key: key);
   final ItemScrollController itemScrollController;
+  final isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,12 @@ class SecondPart extends StatelessWidget {
         padding: Constants().constPaddingSize,
         child: Column(
           children: [
-            AboutMeWidget(),
+            AboutMeWidget(
+              isMobile: isMobile,
+            ),
             ServicesWidget(
               itemScrollController: itemScrollController,
+              isMobile: isMobile,
             )
           ],
         ),
