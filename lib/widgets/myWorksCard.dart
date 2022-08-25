@@ -359,12 +359,10 @@ class ShowText extends StatelessWidget {
                     }),
               )
             : Flexible(
-                child: Text(
-                  secondText,
-                  style: isMobile
-                      ? Constants().normalTextStyle
-                      : Constants().mobileNormalTextStyle,
-                ),
+                child: Text(secondText,
+                    style: isMobile
+                        ? Constants().mobileNormalTextStyle
+                        : Constants().normalTextStyle),
               )
       ],
     );
