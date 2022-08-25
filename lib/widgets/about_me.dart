@@ -42,6 +42,7 @@ class MobileAbout extends StatelessWidget {
           radius: 8.h,
           backgroundColor: const Color.fromARGB(255, 90, 178, 249),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
