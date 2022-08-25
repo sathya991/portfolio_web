@@ -94,7 +94,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                         onClick: () => widget.itemScrollController.scrollTo(
                             index: 3,
                             duration: const Duration(milliseconds: 300)),
-                        imageAsset: 'images/handshake.png',
+                        imageAsset: 'assets/images/handshake.png',
                         text: "Hire me",
                         isMobile: widget.isMobile,
                       ),
@@ -109,7 +109,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                             return ImageButton(
                               widget: widget,
                               onClick: followLink,
-                              imageAsset: 'images/cloud.png',
+                              imageAsset: 'assets/images/cloud.png',
                               text: "Download CV",
                               isMobile: widget.isMobile,
                             );
@@ -124,7 +124,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                         onClick: () => widget.itemScrollController.scrollTo(
                             index: 3,
                             duration: const Duration(milliseconds: 300)),
-                        imageAsset: 'images/handshake.png',
+                        imageAsset: 'assets/images/handshake.png',
                         text: "Hire me",
                         isMobile: widget.isMobile,
                       ),
@@ -139,7 +139,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                             return ImageButton(
                               widget: widget,
                               onClick: followLink,
-                              imageAsset: 'images/cloud.png',
+                              imageAsset: 'assets/images/cloud.png',
                               text: "Download CV",
                               isMobile: widget.isMobile,
                             );

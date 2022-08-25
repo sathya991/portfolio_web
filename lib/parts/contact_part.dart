@@ -57,7 +57,8 @@ class _ContactPartState extends State<ContactPart> {
             width: 100.w,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('images/cBG.jpg'), fit: BoxFit.fill)),
+                    image: AssetImage('assets/images/cBG.jpg'),
+                    fit: BoxFit.fill)),
             child: Padding(
               padding: Constants().constPaddingSize,
               child: Column(
@@ -138,7 +139,8 @@ class _ContactPartState extends State<ContactPart> {
             width: 100.w,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('images/cBG.jpg'), fit: BoxFit.fill)),
+                    image: AssetImage('assets/images/cBG.jpg'),
+                    fit: BoxFit.fill)),
             child: Padding(
               padding: Constants().constPaddingSize,
               child: Column(

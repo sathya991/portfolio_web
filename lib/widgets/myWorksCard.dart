@@ -361,7 +361,9 @@ class ShowText extends StatelessWidget {
             : Flexible(
                 child: Text(
                   secondText,
-                  style: Constants().mobileNormalTextStyle,
+                  style: isMobile
+                      ? Constants().normalTextStyle
+                      : Constants().mobileNormalTextStyle,
                 ),
               )
       ],

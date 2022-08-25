@@ -17,7 +17,7 @@ class MyWorksPart extends StatelessWidget {
           image: DecorationImage(
               opacity: 0.6,
               image: AssetImage(
-                'images/worksBG.jpg',
+                'assets/images/worksBG.jpg',
               ),
               fit: BoxFit.cover)),
       child: Padding(

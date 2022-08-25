@@ -20,13 +20,13 @@ class RecentWorkDetails {
 List<RecentWorkDetails> recentWorkDetailsList = [
   RecentWorkDetails(
       imageAssets: [
-        "images/todoImage1.png",
-        "images/todoImage2.png",
-        "images/todoImage3.png",
-        "images/todoImage4.png",
-        "images/todoImage5.png",
-        "images/todoImage6.png",
-        "images/todoImage7.png"
+        "assets/images/todoImage1.png",
+        "assets/images/todoImage2.png",
+        "assets/images/todoImage3.png",
+        "assets/images/todoImage4.png",
+        "assets/images/todoImage5.png",
+        "assets/images/todoImage6.png",
+        "assets/images/todoImage7.png"
       ],
       appName: "Todo",
       about:
@@ -36,9 +36,9 @@ List<RecentWorkDetails> recentWorkDetailsList = [
       type: "Android & IOS application"),
   RecentWorkDetails(
       imageAssets: [
-        "images/portfolioImage1.png",
-        "images/portfolioImage2.png",
-        "images/portfolioImage3.png"
+        "assets/images/portfolioImage1.png",
+        "assets/images/portfolioImage2.png",
+        "assets/images/portfolioImage3.png"
       ],
       appName: "Portfolio Website",
       about:
