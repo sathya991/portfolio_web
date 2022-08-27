@@ -24,7 +24,7 @@ class Constants {
       "Hey everyone this is Sathya, I Recently completed my graduation in Bachelors of Technology in the field of Computer Science and Engineering. I am a passionate engineer who loves working on various kinds of projects, I worked with various technologies like web technology using MEAN stack, Android Development using JAVA, even a bit of Machine Learning. Currently I have been working with Flutter from the past year.";
 
   TextStyle get headingTextStyle => GoogleFonts.lato(fontSize: 10.sp);
-  TextStyle get mobileHeadingTextStyle => GoogleFonts.lato(fontSize: 20.sp);
+  TextStyle get mobileHeadingTextStyle => GoogleFonts.lato(fontSize: 15.sp);
   TextStyle get normalTextStyle =>
       GoogleFonts.lato(fontSize: 5.sp, fontWeight: FontWeight.w500);
 
@@ -32,9 +32,9 @@ class Constants {
       GoogleFonts.lato(fontSize: 6.sp, fontStyle: FontStyle.italic);
 
   TextStyle get mobileCaptionsTextStyle =>
-      GoogleFonts.lato(fontSize: 12.sp, fontStyle: FontStyle.italic);
+      GoogleFonts.lato(fontSize: 10.sp, fontStyle: FontStyle.italic);
 
   TextStyle get mobileNormalTextStyle =>
-      GoogleFonts.lato(fontSize: 12.sp, fontWeight: FontWeight.w500);
+      GoogleFonts.lato(fontSize: 9.sp, fontWeight: FontWeight.w500);
   EdgeInsets get constPaddingSize => EdgeInsets.fromLTRB(10.w, 2.h, 10.w, 0);
 }

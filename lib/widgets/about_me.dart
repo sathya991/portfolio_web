@@ -39,7 +39,8 @@ class MobileAbout extends StatelessWidget {
           height: 1.h,
         ),
         CircleAvatar(
-          radius: 6.h,
+          minRadius: 6.h,
+          maxRadius: 10.h,
           backgroundColor: const Color.fromARGB(255, 90, 178, 249),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
