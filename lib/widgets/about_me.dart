@@ -39,7 +39,7 @@ class MobileAbout extends StatelessWidget {
           height: 1.h,
         ),
         CircleAvatar(
-          radius: 8.h,
+          radius: 6.h,
           backgroundColor: const Color.fromARGB(255, 90, 178, 249),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -51,7 +51,8 @@ class MobileAbout extends StatelessWidget {
               ),
               Text(
                 "Year of Experience",
-                style: GoogleFonts.lato(fontSize: 12.sp, color: Colors.white),
+                textAlign: TextAlign.center,
+                style: GoogleFonts.lato(fontSize: 10.sp, color: Colors.white),
               )
             ],
           ),

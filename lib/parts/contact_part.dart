@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/models/contactModel.dart';
 import 'package:portfolio/widgets/contactContainer.dart';
@@ -8,7 +9,7 @@ import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactPart extends StatefulWidget {
-  const ContactPart({Key? key, this.isMobile}) : super(key: key);
+  const ContactPart({Key? key, required this.isMobile}) : super(key: key);
   final isMobile;
   @override
   State<ContactPart> createState() => _ContactPartState();
@@ -56,9 +57,10 @@ class _ContactPartState extends State<ContactPart> {
             height: 100.h,
             width: 100.w,
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/cBG.jpg'),
-                    fit: BoxFit.fill)),
+                gradient: LinearGradient(colors: [
+              Color.fromARGB(1, 33, 147, 176),
+              Color.fromRGBO(109, 213, 237, 1)
+            ])),
             child: Padding(
               padding: Constants().constPaddingSize,
               child: Column(
@@ -138,9 +140,10 @@ class _ContactPartState extends State<ContactPart> {
             height: 100.h,
             width: 100.w,
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/cBG.jpg'),
-                    fit: BoxFit.fill)),
+                gradient: LinearGradient(colors: [
+              Color.fromARGB(1, 33, 147, 176),
+              Color.fromRGBO(109, 213, 237, 1)
+            ])),
             child: Padding(
               padding: Constants().constPaddingSize,
               child: Column(

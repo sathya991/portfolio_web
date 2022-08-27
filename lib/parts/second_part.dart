@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/widgets/about_me.dart';
 import 'package:portfolio/widgets/services_offered.dart';
@@ -7,7 +8,7 @@ import 'package:sizer/sizer.dart';
 
 class SecondPart extends StatelessWidget {
   const SecondPart(
-      {Key? key, required this.itemScrollController, this.isMobile})
+      {Key? key, required this.itemScrollController, required this.isMobile})
       : super(key: key);
   final ItemScrollController itemScrollController;
   final isMobile;
@@ -15,7 +16,11 @@ class SecondPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: Colors.white),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+        HexColor("#1c92d2"),
+        HexColor("#f2fcfe"),
+      ])),
       height: 100.h,
       width: 100.w,
       child: Padding(

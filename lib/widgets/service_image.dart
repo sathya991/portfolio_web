@@ -59,6 +59,8 @@ class ServiceImageMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 7.h,
+      width: 80.w,
       decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(20),

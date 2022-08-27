@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/widgets/myWorksCard.dart';
 import 'package:portfolio/widgets/carouselView.dart';
 import 'package:sizer/sizer.dart';
 
 class MyWorksPart extends StatelessWidget {
-  const MyWorksPart({Key? key, this.isMobile}) : super(key: key);
+  const MyWorksPart({Key? key, required this.isMobile}) : super(key: key);
   final isMobile;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100.h,
       width: 100.w,
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              opacity: 0.6,
-              image: AssetImage(
-                'assets/images/worksBG.jpg',
-              ),
-              fit: BoxFit.cover)),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [HexColor("#ECE9E6"), HexColor("#ffffff")])),
       child: Padding(
         padding: Constants().constPaddingSize,
         child: Column(

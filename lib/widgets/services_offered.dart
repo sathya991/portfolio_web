@@ -54,6 +54,20 @@ class _ServicesWidgetState extends State<ServicesWidget> {
 
   @override
   Widget build(BuildContext context) {
+    return CommonWidget(
+      widget: widget,
+      servicesList: servicesList,
+    );
+  }
+}
+
+class CommonWidget extends StatelessWidget {
+  const CommonWidget({Key? key, this.widget, this.servicesList})
+      : super(key: key);
+  final widget;
+  final servicesList;
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

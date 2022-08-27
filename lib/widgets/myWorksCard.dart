@@ -114,7 +114,7 @@ class MobileCarouselImagePart extends StatelessWidget {
                                       );
                                     },
                                     options: CarouselOptions(
-                                        height: 30.h,
+                                        height: 80.h,
                                         autoPlay: true,
                                         enlargeCenterPage: true,
                                         viewportFraction: 1,
