@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Container(
-            constraints: BoxConstraints(maxHeight: 1000, maxWidth: 1000),
-            child: const HomeScreen()),
+        home: HomeScreen(),
       );
     });
   }

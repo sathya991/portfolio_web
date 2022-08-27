@@ -6,7 +6,7 @@ class MobileLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CommonLayout(
+    return CommonLayout(
       isMobile: true,
     );
   }
