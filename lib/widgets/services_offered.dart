@@ -85,9 +85,13 @@ class CommonWidget extends StatelessWidget {
                   children: servicesList,
                 )
               : Row(children: servicesList),
-          SizedBox(
-            height: 6.h,
-          ),
+          widget.isMobile
+              ? SizedBox(
+                  height: 3.h,
+                )
+              : SizedBox(
+                  height: 6.h,
+                ),
         ]),
         Column(
           children: [
