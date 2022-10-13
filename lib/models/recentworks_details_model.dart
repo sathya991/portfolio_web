@@ -36,6 +36,18 @@ List<RecentWorkDetails> recentWorkDetailsList = [
       type: "Android & IOS application"),
   RecentWorkDetails(
       imageAssets: [
+        "assets/images/tic4.png",
+        "assets/images/tic3.png",
+        "assets/images/tic1.png",
+        "assets/images/tic2.png"
+      ],
+      appName: "TicTacToe",
+      about: "A Fun TicTacToe Game made with Flutter",
+      github: "https://github.com/sathya991/TicTacToe",
+      appStoreLink: "",
+      type: "Android & IOS application"),
+  RecentWorkDetails(
+      imageAssets: [
         "assets/images/portfolioImage1.png",
         "assets/images/portfolioImage2.png",
         "assets/images/portfolioImage3.png"
@@ -45,5 +57,5 @@ List<RecentWorkDetails> recentWorkDetailsList = [
           "A Portfolio website that showcases my arsenal of projects made with Flutter with its very own touch of styling.",
       github: "https://github.com/sathya991/portfolio_web/tree/master",
       appStoreLink: "",
-      type: "Website using Flutter")
+      type: "Website using Flutter"),
 ];
